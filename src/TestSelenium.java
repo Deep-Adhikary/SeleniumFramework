@@ -1,6 +1,8 @@
 /**
  * Created by phoenix on 5/7/17.
  */
+import ObjectClass.Browser;
+import ObjectClass.BrowserFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.*;
@@ -20,6 +22,8 @@ public class TestSelenium {
 
         WebElement button=driver.findElement(By.xpath("//input[@name='btnLogin']"));
         button.click();*/
+        Browser bw=new Browser(BrowserFactory.fireFox());
+
         RWDTest rwtest=new RWDTest();
         try{
             rwtest.setUp();

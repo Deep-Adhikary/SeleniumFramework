@@ -14,8 +14,9 @@ import java.util.function.Function;
  */
 public class Browser {
     private WebDriver driver;
+
     private ObjectDescriptionHandler objHandle;
-    Browser(String browserName){
+    public Browser(String browserName){
 
         switch (browserName){
             case "ie" :
@@ -28,7 +29,7 @@ public class Browser {
                 driver=(new ChromeDriver());
         }
     }
-    Browser(String browserName, String driverPath){
+    public Browser(String browserName, String driverPath){
 
         switch (browserName){
             case "ie" :
@@ -42,6 +43,7 @@ public class Browser {
                 System.setProperty("webdriver.chrome.driver",driverPath);
                 driver=new ChromeDriver();
         }
+        GlobalVars.driver=driver;
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         objHandle=new ObjectDescriptionHandler(driver);
     }

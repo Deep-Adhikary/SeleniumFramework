@@ -6,21 +6,16 @@ import java.util.Properties;
  * Created by phoenix on 8/7/17.
  */
 public class BrowserFactory {
-    private Properties browserType;
-    BrowserFactory(){
-        browserType=new Properties();
-        browserType.put("Internet Explorer", "ie");
-        browserType.put("Firefox", "ffx");
-        browserType.put("Google Chrome", "gchrome");
+
+   
+    public static String internetExplorer(){
+        return "ie";
     }
-    public String internetExplorer(){
-        return browserType.getProperty("Internet Explorer");
-    }
-    public String fireFox(){
-        return browserType.getProperty("Firefox");
+    public static String fireFox(){
+        return "ffx";
 
     }
-    public String googleChrome(){
-        return browserType.getProperty("Google Chrome");
+    public static String googleChrome(){
+        return "gchrome";
     }
 }

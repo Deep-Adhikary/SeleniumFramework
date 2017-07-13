@@ -3,14 +3,15 @@ package ObjectClass;
 import org.openqa.selenium.*;
 
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Created by phoenix on 8/7/17.
  */
-public class WebTextBox  {
-    private final WebElement element;
+public class WebTextBox extends SeleWrapper  {
     public WebTextBox(final WebElement element) {
-        this.element = element;
+        super(element);
+
     }
     public void click() {
         element.click();
@@ -21,4 +22,15 @@ public class WebTextBox  {
     public void clear() {
         element.clear();
     }
+
+    @Override
+    public Properties getObjectProperties(String... keys) {
+        return null;
+    }
+
+    @Override
+    public boolean exists(int waitTime) {
+        return false;
+    }
+
 }
